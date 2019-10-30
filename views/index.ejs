@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calendrier</title>
+	</head>
+
+	<body>
+        <h1>Testing view</h1>
+        <h4>Events list</h4>
+        <form name="form" method="POST" action="/api/event/" >
+            <p>Title</p>
+            <input type="text" name="title" />
+            <p>Start</p>
+            <input type="time" name="start" />
+            <p>End</p>
+            <input type="time" name="end" />
+            <p>Owner</p>
+            <input type="text" name="owner" />
+            <input type="submit" value="CREATE" />
+        </form>
+        <ul>
+            <% calendar.forEach(function(event) { %>
+                <li data-event-id=<%=event.id%> onclick="onClick(<%= JSON.stringify(event) %>)"> 
+                    <%= event.id %> | <%= event.title %> | <%= event.owner %> | from <%= event.start.getHours()%>h <%= event.start.getMinutes()%>min to <%= event.end.getHours()%>h <%= event.end.getMinutes()%> min 
+                </li>
+            <% }); %>
+        </ul>
+    </body>
+</html>
+
+<script>
+function onClick(eventString) {
+    const event = JSON.parse(eventString)
+    const alertMsg = ''
+    if (!event) {
+        alertMsg = 'Event not found in the calendar'
+    }
+
+    alertMsg = `
+        Titre: ${event.title}
+        Duree: ${event.end - event.start}
+        Utilisateur: ${event.owner}
+    `
+    
+    alert(alertMsg)
+}   
+</script>
+
+

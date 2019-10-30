@@ -1,0 +1,23 @@
+{
+  "name": "back-tp1",
+  "version": "1.0.0",
+  "description": "tp1-node-back",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "tp",
+    "1",
+    "efrei"
+  ],
+  "author": "louis Singer",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "js-datepicker": "^5.0.3"
+  }
+}

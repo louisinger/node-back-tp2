@@ -1,0 +1,19 @@
+@apiUrl = localhost:3000/api/event
+
+###
+GET http://{{apiUrl}}/
+
+###
+GET http://{{apiUrl}}/500790866
+
+###
+POST http://{{apiUrl}}/500790866
+content-Type: application/json
+
+{
+    "title": "PAS MATHEMATIQUES",
+    "owner": "Louis Singer"    
+}
+
+###
+DELETE http://{{apiUrl}}/
